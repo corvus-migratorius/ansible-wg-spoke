@@ -1,5 +1,5 @@
 ---
-name: ansible-role-template
+name: ansible-wg-spoke
 channels:
   - conda-forge
 dependencies:
