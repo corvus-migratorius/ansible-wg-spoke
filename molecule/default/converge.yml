@@ -14,3 +14,4 @@
       hub_ipv4_vpn: "10.0.0.254"
       hub_port: "51820"
       hide_secrets: false
+      logging: false  # doesn't work in Github Actions environment
