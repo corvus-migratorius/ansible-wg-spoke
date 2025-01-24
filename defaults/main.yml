@@ -1,2 +1,4 @@
 ---
 hide_secrets: true
+logging: true
+

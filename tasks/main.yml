@@ -3,3 +3,7 @@
   ansible.builtin.include_tasks:
     file: "tasks/deploy.yml"
 
+- name: "Include Wireguard logging configuration tasks"
+  when: logging is true
+  ansible.builtin.include_tasks:
+    file: "tasks/logging.yml"
