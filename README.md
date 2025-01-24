@@ -1,13 +1,7 @@
-template
+wg_spoke
 =========
 
-Template for Ansible role monorepos.
-
-⚠️ Do not forget to update:
-
-- `meta/main.yml`
-- Conda/Mamba manifests
-- this README =)
+Configure the host as a Spoke in Wireguard Spoke&Hub topology.
 
 Requirements
 ------------
