@@ -11,7 +11,7 @@
   ansible.builtin.fail:
     msg: "The interface name must not contain dashes, got: '{{ iface_name }}'"
 
-- name: "Create a Spoke configuration file"
+- name: "Create a Spoke configuration file with the [Interface] section"
   no_log: "{{ hide_secrets }}"
   notify: "Run the Wireguard service"
   ansible.builtin.blockinfile:
@@ -26,6 +26,9 @@
       Address = {{ spoke_ipv4_vpn }}/32
       ListenPort = {{ spoke_port }}
       PrivateKey = {{ spoke_pkey }}
+      {% if dns_server is defined and domain is defined %}
+      PostUp = resolvectl dns %i {{ dns_server }}; resolvectl domain %i {{ domain }}
+      {% endif %}
 
       [Peer]  # Settings for the Hub
       PublicKey = {{ hub_pubkey }}

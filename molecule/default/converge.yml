@@ -13,5 +13,7 @@
       hub_ipv4_wan: "1.2.3.4"
       hub_ipv4_vpn: "10.0.0.254"
       hub_port: "51820"
+      dns_server: "10.0.0.254:5300"
+      domain: "adm.local"
       hide_secrets: false
       logging: false  # doesn't work in Github Actions environment
