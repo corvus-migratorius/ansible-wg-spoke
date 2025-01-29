@@ -26,7 +26,6 @@
       Address = {{ spoke_ipv4_vpn }}/32
       ListenPort = {{ spoke_port }}
       PrivateKey = {{ spoke_pkey }}
-      PresharedKey = {{ spoke_psk }}
 
       {% if dns_server is defined and domain is defined %}
       PostUp = resolvectl dns %i {{ dns_server }}; resolvectl domain %i {{ domain }}
@@ -34,6 +33,7 @@
 
       [Peer]  # Settings for the Hub
       PublicKey = {{ hub_pubkey }}
+      PresharedKey = {{ hub_psk }}
       AllowedIPs = {{ subnet }}/{{ netmask }}
       Endpoint = {{ hub_ipv4_wan }}:{{ hub_port }}
       PersistentKeepalive = 20
