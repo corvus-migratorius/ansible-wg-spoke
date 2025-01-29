@@ -26,6 +26,8 @@
       Address = {{ spoke_ipv4_vpn }}/32
       ListenPort = {{ spoke_port }}
       PrivateKey = {{ spoke_pkey }}
+      PresharedKey = {{ spoke_psk }}
+
       {% if dns_server is defined and domain is defined %}
       PostUp = resolvectl dns %i {{ dns_server }}; resolvectl domain %i {{ domain }}
       {% endif %}
