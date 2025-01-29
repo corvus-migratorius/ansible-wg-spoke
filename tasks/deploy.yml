@@ -11,7 +11,7 @@
   ansible.builtin.fail:
     msg: "The interface name must not contain dashes, got: '{{ iface_name }}'"
 
-- name: "Create a Spoke configuration file with the [Interface] section"
+- name: "Create a Spoke configuration file"
   no_log: "{{ hide_secrets }}"
   notify: "Run the Wireguard service"
   ansible.builtin.blockinfile:
