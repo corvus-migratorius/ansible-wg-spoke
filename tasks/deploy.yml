@@ -33,7 +33,9 @@
 
       [Peer]  # Settings for the Hub
       PublicKey = {{ hub_pubkey }}
+      {% if hub_psk is defined %}
       PresharedKey = {{ hub_psk }}
+      {% endif %}
       AllowedIPs = {{ subnet }}/{{ netmask }}
       Endpoint = {{ hub_ipv4_wan }}:{{ hub_port }}
       PersistentKeepalive = 20
