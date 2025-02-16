@@ -31,10 +31,10 @@
       PostUp = resolvectl dns %i {{ dns_server }}; resolvectl domain %i {{ domain }}
       {% endif %}
 
-      [Peer]  # Settings for the Hub
+      [Peer]  # Settings for the Hub peer
       PublicKey = {{ hub_pubkey }}
-      {% if hub_psk is defined %}
-      PresharedKey = {{ hub_psk }}
+      {% if spoke_psk is defined %}
+      PresharedKey = {{ spoke_psk }}
       {% endif %}
       AllowedIPs = {{ subnet }}/{{ netmask }}
       Endpoint = {{ hub_ipv4_wan }}:{{ hub_port }}
